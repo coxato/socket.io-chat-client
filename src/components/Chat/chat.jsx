@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import querySearh from 'query-string';
 import io from 'socket.io-client';
+import { 
+    // OFFLINE_API_URL, 
+    ONLINE_API_URL 
+} from '../../config/config';
 // components
 import InfoBar from '../InfoBar/infoBar';
 import InputField from '../InputField/inputField';
@@ -16,12 +20,11 @@ function Chat() {
     const [messages, setMessages] = useState([]);
 
     const { name, room } = querySearh.parse(window.location.search);
-    const SERVERPORT = 5000; 
 
     // join to chat
     useEffect(() => {
         // socket.io server connection
-        socket = io(`localhost:${SERVERPORT}`);
+        socket = io(`${ONLINE_API_URL}`);
         setUserName(name);
         setchatRoom(room);
 
@@ -33,7 +36,7 @@ function Chat() {
             socket.emit('disconnect');
             socket.off();
         }
-    }, [name, room, SERVERPORT]);
+    }, [name, room]);
 
     // listen for messages
     useEffect(() => {
@@ -52,8 +55,6 @@ function Chat() {
             socket.emit('send-message', message, () => setMessage(''));
         }
     }
-
-    console.log(messages);
 
     return (
         <div className="container-full">

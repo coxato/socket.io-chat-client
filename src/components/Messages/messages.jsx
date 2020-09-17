@@ -7,8 +7,8 @@ function Messages({ messages, username }) {
         <div className="messages-container">
             <ScrollToBottom>
                 {
-                    messages.map( message => {
-                        return <Message message={message} username={username} />
+                    messages.map( (message, index) => {
+                        return <Message message={message} username={username} key={index} />
                     })
                 }
             </ScrollToBottom>
