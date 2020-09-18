@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import querySearh from 'query-string';
 import io from 'socket.io-client';
-import { 
-    // OFFLINE_API_URL, 
-    ONLINE_API_URL 
+import {
+    SERVER_URL 
 } from '../../config/config';
 // components
 import InfoBar from '../InfoBar/infoBar';
@@ -24,7 +23,7 @@ function Chat() {
     // join to chat
     useEffect(() => {
         // socket.io server connection
-        socket = io(`${ONLINE_API_URL}`);
+        socket = io(`${SERVER_URL}`);
         setUserName(name);
         setchatRoom(room);
 
