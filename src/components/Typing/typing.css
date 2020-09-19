@@ -1,0 +1,12 @@
+.typingMembers-container{
+    margin: 7px 3% 0 3%;
+    min-height: 17px;
+    width: 100%;
+}
+
+.typing-name{
+    padding: 2px;
+    color: #d2deff;
+    font-size: 15px;
+    font-family: verdana;
+}
