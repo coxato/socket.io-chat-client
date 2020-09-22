@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatContext } from '../../contexts/chatContext';
+// components
 import Typing from '../Typing/typing';
 import './infoBar.css';
 
-function InfoBar({ room, membersTyping }) {
+function InfoBar({ room }) {
+    const { membersTyping } = useContext(ChatContext);
+
     return (
         <div className="infoBar-container">
             <div className="infoBar-top">
