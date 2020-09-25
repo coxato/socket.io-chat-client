@@ -26,6 +26,7 @@ function InputFieldContainer({handleChange, sendMessage, message}) {
         });
     }, [socket, setMembersTyping]);
 
+
     // componentWillUnmount for typing timer
     useEffect(() => {
         return () => {
@@ -33,12 +34,15 @@ function InputFieldContainer({handleChange, sendMessage, message}) {
         }
     }, []);
 
+
     // handle input key up
     const handleTyping = (ev) => {
         ev.preventDefault();
         clearTimeout(typingTimer);
-        if(ev.key === 'Enter') { sendMessage(ev); return; }
-        
+        if(ev.key === 'Enter') { 
+            sendMessage(ev);
+            return; 
+        }
         // typing logic
         let finishTypingInterval = 2000;
         if(ev.target.value){

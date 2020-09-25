@@ -5,6 +5,7 @@ import InfoBar from '../InfoBar/infoBar';
 import InputFieldContainer from '../InputField/inputFieldContainer';
 import Messages from '../Messages/messages';
 
+let sendTimes = 1;
 
 function Chat() {
     const [message, setMessage] = useState('');
@@ -24,16 +25,17 @@ function Chat() {
 
     // handle input onchange
     const handleChange = (ev) => setMessage(ev.target.value);
-
+    
     // send message
     const sendMessage = (ev) => {
         ev.preventDefault();
+        console.log("sendMessage", sendTimes);
+        sendTimes++;
 
         if(message){
-            socket.emit('send-message', message, () => {
-                setMessage('');
-                socket.emit('stop-typing', username);
-            });
+            setMessage('');
+            socket.emit('stop-typing', username);
+            socket.emit('send-message', message, () => {});
         }
     }
 
