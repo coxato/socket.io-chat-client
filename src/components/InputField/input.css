@@ -21,9 +21,13 @@
     text-transform: uppercase;
     text-decoration: none;
     background: #2979FF;
-    padding: 20px;
     display: inline-block;
+    border-radius: 0 5px 5px 0;
     border: none;
     width: 20%;
     cursor: pointer;
+  }
+
+  .input-border{
+    border-radius: 5px 0 0 5px;
   }

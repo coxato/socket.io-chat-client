@@ -4,7 +4,7 @@ const OFFLINE_API_URL = '190.74.250.183:7000'; // global pc
 // const OFFLINE_API_URL = 'http://192.168.0.103:7000'; // local wifi
 
 
-const dev = true;
+const dev = false;
 
 const SERVER_URL = dev ? OFFLINE_API_URL : ONLINE_API_URL; 
 

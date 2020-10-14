@@ -10,6 +10,7 @@ const InputField = ({ handleChange, handleTyping, sendMessage, message }) => (
                 onChange={handleChange}
                 onKeyUp={handleTyping}
                 value={message}
+                className="input-border"
             />
         </div>
         <button className="sendButton" type="submit" onClick={e => sendMessage(e)}>Send</button>

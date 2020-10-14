@@ -30,7 +30,23 @@
   display: flex;
   flex: 0.5;
   justify-content: flex-end;
-  margin-right: 5%;
+  margin-right: 3%;
+}
+
+.rightInnerContainer a{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.rightInnerContainer a:hover{
+  background: #e64343;
 }
 
 .onlineIcon {

@@ -57,6 +57,10 @@ body {
     outline: none;
     border-radius: 5px;
   }
+
+  .field-input > .input-border{
+    border-radius: 5px 0 0 5px;
+  } 
   
   /*
       -------- label inside of .field-input container --------
@@ -271,4 +275,11 @@ body {
     border-radius: 7px;
     background-color: white;
     box-shadow: 0px 0px 10px 1px #262626;
+}
+
+/* media queries */
+@media screen and (max-width: 780px){
+  .container-center{
+    width: 95%;
+  }
 }
